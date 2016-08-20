@@ -7,9 +7,18 @@ public class Mouse : MonoBehaviour {
 
     public static GameObject CurrentlySelectedUnit;
 
+    public static ArrayList CurrentlySelectedUnits = new ArrayList();
+
     public GameObject Target;
 
     private Vector3 mouseDownPoint;
+
+    public static bool UserIsDragging;
+    private static float TimeLimitBeforeDrag = 1f;
+    private static float TimeLeftBeforeDeclaringDrag;
+    private static Vector2 MouseDragStart;
+
+    private static float clickDragZone = 1.3f;
 
     void Awake()
     {
@@ -20,98 +29,224 @@ public class Mouse : MonoBehaviour {
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             //store point at mouse button down
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
                 mouseDownPoint = hit.point;
 
-            if (hit.collider.name == "TerrainMain")
+            //Mouse Drag
+            if(Input.GetMouseButtonDown(0))
+            {
+                TimeLeftBeforeDeclaringDrag = TimeLimitBeforeDrag;
+                MouseDragStart = Input.mousePosition;
+            }
+            else if (Input.GetMouseButton(0))
+            {
+                //if the use is not dragging, lets do the tests
+                if(!UserIsDragging)
+                {
+                    TimeLeftBeforeDeclaringDrag -= Time.deltaTime;
+                    if(TimeLeftBeforeDeclaringDrag <= 0f || UserDraggingByPosition(MouseDragStart, Input.mousePosition))
+                    {
+                        //if tests pass (true) user is dragging!
+                        UserIsDragging = true;
+                    }
+
+                }
+
+                //ok user is dragging lets compete (GUI...)
+                if(UserIsDragging)
+                Debug.Log("yes the user is dragging");
+            }
+            else if(Input.GetMouseButtonUp(0))
+            {
+                TimeLeftBeforeDeclaringDrag = 0f;
+                UserIsDragging = false;
+                Debug.Log("user is not dragging");
+            }
+
+            
+
+            //Mouse click
+            if (!UserIsDragging)
             {
 
-                //When we click the right mouse button, instaniate target
-                if (Input.GetMouseButtonDown(1))
-                {
-                    GameObject TargetObj = Instantiate(Target, hit.point, Quaternion.identity) as GameObject;
-                    TargetObj.name = "Taget Instantiated";
-                }
-                else if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))
-                    DeselectGameObjectIfSelected();
-
-            }  // end of the terrain
-
-            else {
-
-                //hitting other objects
-                if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))
+                if (hit.collider.name == "TerrainMain")
                 {
 
-                    //is the user hitting a unt?
-                    if (hit.collider.transform.FindChild("Selected"))
+                    //When we click the right mouse button, instaniate target
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        GameObject TargetObj = Instantiate(Target, hit.point, Quaternion.identity) as GameObject;
+                        TargetObj.name = "Taget Instantiated";
+                    }
+                    else if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))
+                        if (!ShiftKeysDown())
+                            DeselectGameObjectsIfSelected();
+
+                }  // end of the terrain
+
+                else {
+
+                    //hitting other objects
+                    if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))
                     {
 
-                        //found a unit we can select
-                        Debug.Log("found a unit");
-
-                        //are we selecting a different object?
-                        if (CurrentlySelectedUnit != hit.collider.gameObject)
+                        //is the user hitting a unit?
+                        if (hit.collider.transform.FindChild("Selected"))
                         {
-                            //Activate the selector
-                            GameObject SelectedObj = hit.collider.transform.FindChild("Selected").gameObject;
-                            SelectedObj.SetActive(true);
 
-                            //deactivate the currently selected objects selector
-                            if (CurrentlySelectedUnit != null)
-                                CurrentlySelectedUnit.transform.FindChild("Selected").gameObject.SetActive(false);
+                            //found a unit we can select
+                            Debug.Log("found a unit");
 
-                            //replace cyrrently selected unit
-                            CurrentlySelectedUnit = hit.collider.gameObject;
+                            //are we selecting a different object?
+                            if (!UnitAlreadyInCurrentlySelectedUnits(hit.collider.gameObject))
+                            {
+
+                                //if the shift key is not down remove the rest of the units
+                                if (!ShiftKeysDown())
+                                    DeselectGameObjectsIfSelected();
+
+                                GameObject SelectedObj = hit.collider.transform.FindChild("Selected").gameObject;
+                                SelectedObj.SetActive(true);
+
+                                //add unit to currently selected units
+                                CurrentlySelectedUnits.Add(hit.collider.gameObject);
+
+                            }
+                            else {
+                                //unit is already in the currently selected units arraylist
+                                //remove the unit!
+                                if (ShiftKeysDown())
+                                    RemoveUnitFromCurrentlySelectedUnits(hit.collider.gameObject);
+                                else
+                                {
+                                    DeselectGameObjectsIfSelected();
+                                    GameObject SelectedObj = hit.collider.transform.FindChild("Selected").gameObject;
+                                    SelectedObj.SetActive(true);
+                                    CurrentlySelectedUnits.Add(hit.collider.gameObject);
+                                }
+                            }
+
                         }
+                        else {
 
-                    } else {
-
-                        //if this object is not a unit
-                        DeselectGameObjectIfSelected();
+                            //if this object is not a unit
+                            if (!ShiftKeysDown())
+                                DeselectGameObjectsIfSelected();
+                        }
                     }
                 }
+
             }
-                
-            } else
-            {
-                if(Input.GetMouseButtonUp(0))
+            else {
+                if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))
                 {
-                    DeselectGameObjectIfSelected();
+                    if (!ShiftKeysDown())
+                        DeselectGameObjectsIfSelected();
                 }
             }
-        Debug.DrawRay(ray.origin, ray.direction * Mathf.Infinity, Color.yellow);
-    }
+        } // end of is dragging?
+
+        Debug.DrawRay(ray.origin, ray.direction * 1000, Color.yellow);
+    } // end of raycasthits
        
     
 
     #region Helper functions
     
-     //check if user clicked mouse
+    //is the user dragging relative to the mouse drag start point
+    public bool UserDraggingByPosition(Vector2 DragStartPoint, Vector2 NewPoint)
+    {
+        if (
+            (NewPoint.x > DragStartPoint.x + clickDragZone || NewPoint.x < DragStartPoint.x - clickDragZone) ||
+            (NewPoint.y > DragStartPoint.y + clickDragZone || NewPoint.y < DragStartPoint.y - clickDragZone)
+            )
+            return true;
+        else return false;
+    }
 
+     //check if user clicked mouse
     public bool DidUserClickLeftMouse(Vector3 hitpoint)
     {
-        float clickZone = 0.8f;
+        
         if (
-            (mouseDownPoint.x < hitpoint.x + clickZone && mouseDownPoint.x > hitpoint.x - clickZone) &&
-            (mouseDownPoint.y < hitpoint.y + clickZone && mouseDownPoint.y > hitpoint.y - clickZone) &&
-            (mouseDownPoint.z < hitpoint.z + clickZone && mouseDownPoint.z > hitpoint.z - clickZone)
+            (mouseDownPoint.x < hitpoint.x + clickDragZone && mouseDownPoint.x > hitpoint.x - clickDragZone) &&
+            (mouseDownPoint.y < hitpoint.y + clickDragZone && mouseDownPoint.y > hitpoint.y - clickDragZone) &&
+            (mouseDownPoint.z < hitpoint.z + clickDragZone && mouseDownPoint.z > hitpoint.z - clickDragZone)
             )
             return true;
         else return false;
     }
 
     //deselects gameobject if selected
-    public static void DeselectGameObjectIfSelected()
+    public static void DeselectGameObjectsIfSelected()
     {
-        if(CurrentlySelectedUnit != null)
+        if(CurrentlySelectedUnits.Count > 0)
         {
-            CurrentlySelectedUnit.transform.FindChild("Selected").gameObject.SetActive(false);
-            CurrentlySelectedUnit = null;
+            for(int i = 0; i < CurrentlySelectedUnits.Count; i++)
+            {
+                GameObject ArrayListUnit = CurrentlySelectedUnits[i] as GameObject;
+                ArrayListUnit.transform.FindChild("Selected").gameObject.SetActive(false);
+                
+            }
+
+            CurrentlySelectedUnits.Clear();
         }
+    }
+
+    //check if a unit is already in the currently select units arraylist
+    public static bool UnitAlreadyInCurrentlySelectedUnits(GameObject Unit)
+    {
+        if(CurrentlySelectedUnits.Count > 0)
+        {
+            for(int i = 0; i < CurrentlySelectedUnits.Count; i++)
+            {
+                GameObject ArrayListUnit = CurrentlySelectedUnits[i] as GameObject;
+                if (ArrayListUnit == Unit)
+                    return true;
+            }
+
+            return false;
+        } else
+        {
+            return false;
+        }
+    }
+
+    //remove a unit from the currently selected units arraylist
+    public void RemoveUnitFromCurrentlySelectedUnits(GameObject Unit)
+    {
+        if (CurrentlySelectedUnits.Count > 0)
+        {
+            for (int i = 0; i < CurrentlySelectedUnits.Count; i++)
+            {
+                GameObject ArrayListUnit = CurrentlySelectedUnits[i] as GameObject;
+                if (ArrayListUnit == Unit)
+                {
+                    CurrentlySelectedUnits.RemoveAt(i);
+                    ArrayListUnit.transform.FindChild("Selected").gameObject.SetActive(false);
+                }     
+            }
+
+            return;
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    //are the shift keys being held down?
+    public static bool ShiftKeysDown()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            return true;
+        else return false;
+        
+
+        
     }
 
     #endregion
