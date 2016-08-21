@@ -5,13 +5,15 @@ public class Mouse : MonoBehaviour {
 
     RaycastHit hit;
 
-    public static GameObject CurrentlySelectedUnit;
+    public static ArrayList CurrentlySelectedUnits = new ArrayList(); //of gameobject
 
-    public static ArrayList CurrentlySelectedUnits = new ArrayList();
+    public GUIStyle MouseDragSkin;
 
     public GameObject Target;
 
     private Vector3 mouseDownPoint;
+    private static Vector3 mouseUpPoint;
+    private static Vector3 currentMousePoint; //in world space
 
     public static bool UserIsDragging;
     private static float TimeLimitBeforeDrag = 1f;
@@ -31,6 +33,8 @@ public class Mouse : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
+            currentMousePoint = hit.point;
+
             //store point at mouse button down
             if (Input.GetMouseButtonDown(0))
                 mouseDownPoint = hit.point;
@@ -61,9 +65,11 @@ public class Mouse : MonoBehaviour {
             }
             else if(Input.GetMouseButtonUp(0))
             {
+                if(UserIsDragging)
+                    Debug.Log("user is not dragging");
+
                 TimeLeftBeforeDeclaringDrag = 0f;
                 UserIsDragging = false;
-                Debug.Log("user is not dragging");
             }
 
             
@@ -146,13 +152,31 @@ public class Mouse : MonoBehaviour {
                     if (!ShiftKeysDown())
                         DeselectGameObjectsIfSelected();
                 }
-            }
+            }// end of raycasthits
         } // end of is dragging?
 
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.yellow);
-    } // end of raycasthits
+    } 
        
-    
+    void OnGUI()
+    {
+        //box width, height, top, left
+        if (UserIsDragging)
+        {
+            float BoxWidth = Camera.main.WorldToScreenPoint(mouseDownPoint).x - Camera.main.WorldToScreenPoint(currentMousePoint).x;
+            float BoxHeight = Camera.main.WorldToScreenPoint(mouseDownPoint).y - Camera.main.WorldToScreenPoint(currentMousePoint).y;
+
+
+            float BoxLeft, BoxTop;
+            BoxLeft = Input.mousePosition.x;
+            BoxTop = (Screen.height - Input.mousePosition.y) - BoxHeight;
+            GUI.Box(new Rect(BoxLeft,
+                BoxTop,
+                BoxWidth,
+                BoxHeight), "", MouseDragSkin);
+        }
+
+    }
 
     #region Helper functions
     
