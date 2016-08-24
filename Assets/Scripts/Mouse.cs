@@ -141,6 +141,7 @@ public class Mouse : MonoBehaviour {
                                     GameObject SelectedObj = hit.collider.transform.FindChild("Selected").gameObject;
                                     SelectedObj.SetActive(true);
                                     CurrentlySelectedUnits.Add(hit.collider.gameObject);
+                                    hit.collider.gameObject.GetComponent<Unit>().Selected = true;
                                 }
                             }
 
