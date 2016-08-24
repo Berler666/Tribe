@@ -12,6 +12,13 @@ public class Unit : MonoBehaviour {
     public bool OnScreen;
     public bool Selected = false;
 
+    public bool isWalkable = true;
+
+    void Awake()
+    {
+        Physics.IgnoreLayerCollision(10, 10, true);
+    }
+
     void Update()
     {
         //if the unit is not selected get screen space

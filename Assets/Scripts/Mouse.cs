@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class Mouse : MonoBehaviour {
-    #region
+
+    #region Class Variables
 
     RaycastHit hit;
 
+    public static Vector3 RightClickPoint;
     public static ArrayList CurrentlySelectedUnits = new ArrayList(); //of gameobject
     public static ArrayList UnitsOnScreen = new ArrayList(); //of gameobject
     public static ArrayList UnitsInDrag = new ArrayList(); // of gameobject
@@ -90,8 +92,9 @@ public class Mouse : MonoBehaviour {
                     //When we click the right mouse button, instaniate target
                     if (Input.GetMouseButtonDown(1))
                     {
-                        GameObject TargetObj = Instantiate(Target, hit.point, Quaternion.identity) as GameObject;
-                        TargetObj.name = "Taget Instantiated";
+                        //GameObject TargetObj = Instantiate(Target, hit.point, Quaternion.identity) as GameObject;
+                        //TargetObj.name = "Taget Instantiated";
+                        RightClickPoint = hit.point;
                     }
                     else if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))
                         if (!ShiftKeysDown())
@@ -122,6 +125,9 @@ public class Mouse : MonoBehaviour {
 
                                 //add unit to currently selected units
                                 CurrentlySelectedUnits.Add(hit.collider.gameObject);
+
+                                //change the unit selected value to true;
+                                hit.collider.gameObject.GetComponent<Unit>().Selected = true;
 
                             }
                             else {
