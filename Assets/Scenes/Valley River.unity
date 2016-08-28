@@ -674,6 +674,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010691705654, guid: 69f1b43cfb2acf44ab3b19c550eb8043,
+        type: 2}
+      propertyPath: defaultNextWaypointDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010691705654, guid: 69f1b43cfb2acf44ab3b19c550eb8043,
+        type: 2}
+      propertyPath: speed
+      value: 350
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69f1b43cfb2acf44ab3b19c550eb8043, type: 2}
   m_IsPrefabParent: 0

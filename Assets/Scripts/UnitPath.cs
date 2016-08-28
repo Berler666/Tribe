@@ -10,7 +10,7 @@ public class UnitPath : MonoBehaviour {
     private Unit unit;
 
     public float speed;
-    public float nextWaypointDistance = 10;
+    public float defaultNextWaypointDistance = 10;
     private int currentWaypoint = 0;
 
 
@@ -67,8 +67,14 @@ public class UnitPath : MonoBehaviour {
         dir *= speed * Time.fixedDeltaTime;
         controller.SimpleMove(dir); //Unit moves here
 
+        float nextWayPointDistance = defaultNextWaypointDistance;
+        if(currentWaypoint == path.vectorPath.Count - 1)
+        {
+            nextWayPointDistance = 0f;
+        }
+
         //check if close enough to the current waypoint, if  yes, move on to next waypoint
-        if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
+        if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWayPointDistance)
         {
             currentWaypoint++;
             return;
