@@ -72,21 +72,21 @@ public class GameUIController : MonoBehaviour {
     public void BuildHut()
     {
         buildPanel.SetActive(false);
-        instanciateobjectonclick.hut = true;
+       // instanciateobjectonclick.hut = true;
         Time.timeScale = 1;
     }
 
     public void BuildGatheringHut()
     {
         buildPanel.SetActive(false);
-        instanciateobjectonclick.gatheringhut = true;
+       // instanciateobjectonclick.gatheringhut = true;
         Time.timeScale = 1;
     }
 
     public void BuildChiefHut()
     {
         buildPanel.SetActive(false);
-        instanciateobjectonclick.chiefhut = true;
+       // instanciateobjectonclick.chiefhut = true;
         Time.timeScale = 1;
     }
 
