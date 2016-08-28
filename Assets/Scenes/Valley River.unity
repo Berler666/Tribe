@@ -112,19 +112,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.6807136
+      value: -0.68071353
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.6776848
+      value: 0.6776847
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.16557911
+      value: 0.1655791
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.22350845
+      value: -0.22350842
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
       propertyPath: m_RootOrder
@@ -1342,92 +1342,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 452986, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
   m_PrefabInternal: {fileID: 1143351257}
---- !u!1 &988776941 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 104492, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-  m_PrefabInternal: {fileID: 1232230589}
---- !u!114 &988776942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 988776941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79dcea92b2fe74013a15122c6e1c03f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollAnimationType: 0
-  scrollXAngle:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 15
-      inSlope: 208.1285
-      outSlope: 200
-      tangentMode: 0
-    - time: 1
-      value: 80
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  scrollHigh:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 90
-      inSlope: 0
-      outSlope: 30
-      tangentMode: 0
-    - time: 1
-      value: 120
-      inSlope: 30
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  groundHigh: 0
-  minHigh: 0
-  groundHighTest: 0
-  groundLayer: 8
-  scrollValue: 0.43
-  unlockWhenMove: 1
-  movementLerpSpeed: 5
-  rotationLerpSpeed: 5
-  bound:
-    serializedVersion: 2
-    x: -16
-    y: -191.99933
-    width: 1016
-    height: 1191.9993
-  followingTarget: {fileID: 0}
-  fixedPoint: {fileID: 0}
-  desktopScrollSpeed: 0.13
-  desktopMoveSpeed: 30
-  desktopMoveDragSpeed: 200
-  desktopRotateSpeed: 5
-  touchMoveSpeed: 27
-  touchScrollSpeed: 27
-  touchRotateSpeed: 2
-  horizontalKeyboardAxis: Horizontal
-  verticalKeyboardAxis: Horizontal
-  rotateAxis: Horizontal
-  mouseDragButton: 1
-  mouseRotateButton: 2
-  objectPos: {x: 661.1, y: 119.76, z: 254.7319}
-  wantYAngle: 0
-  wantXAngle: 51.125168
-  keyBoardControl: 0
-  mouseRotateControl: 0
-  screenEdgeMovementControl: 1
-  mouseDragControl: 1
-  mouseScrollControl: 1
-  touchControl: 0
-  allowFollow: 1
 --- !u!1001 &1000824268
 Prefab:
   m_ObjectHideFlags: 0
@@ -1449,19 +1363,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.4234765
+      value: -0.42347652
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.5662752
+      value: 0.56627524
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.5662753
+      value: 0.56627536
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.42347643
+      value: 0.42347646
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_RootOrder
@@ -1890,7 +1804,7 @@ Prefab:
     - target: {fileID: 11402562, guid: d5d1ce6c090e6d7469ac1095b975e039, type: 2}
       propertyPath: RTSCamera
       value: 
-      objectReference: {fileID: 988776941}
+      objectReference: {fileID: 1236671035}
     - target: {fileID: 11402562, guid: d5d1ce6c090e6d7469ac1095b975e039, type: 2}
       propertyPath: fpsCanvas
       value: 
@@ -2005,81 +1919,176 @@ Camera:
   m_PrefabParentObject: {fileID: 2081374, guid: 81b0e9f559d6cab4caa3e303947c3c48,
     type: 2}
   m_PrefabInternal: {fileID: 1143351257}
---- !u!1001 &1232230589
-Prefab:
+--- !u!1 &1236671035
+GameObject:
   m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1236671041}
+  - 20: {fileID: 1236671040}
+  - 92: {fileID: 1236671039}
+  - 124: {fileID: 1236671038}
+  - 81: {fileID: 1236671037}
+  - 114: {fileID: 1236671036}
+  m_Layer: 0
+  m_Name: iS.RTS Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1236671036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236671035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dcea92b2fe74013a15122c6e1c03f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollAnimationType: 0
+  scrollXAngle:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 45
+      inSlope: 208.1285
+      outSlope: 100
+      tangentMode: 0
+    - time: 1
+      value: 80
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  scrollHigh:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 15
+      inSlope: 0
+      outSlope: 100
+      tangentMode: 0
+    - time: 1
+      value: 115
+      inSlope: 100
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  groundHigh: 0
+  minHigh: 0
+  groundHighTest: 1
+  groundLayer: 8
+  scrollValue: 0.5
+  unlockWhenMove: 1
+  movementLerpSpeed: 4
+  rotationLerpSpeed: 4
+  bound:
+    serializedVersion: 2
+    x: 150
+    y: 0
+    width: 750
+    height: 1000
+  followingTarget: {fileID: 0}
+  fixedPoint: {fileID: 0}
+  desktopScrollSpeed: 0.5
+  desktopMoveSpeed: 125
+  desktopMoveDragSpeed: 175
+  desktopRotateSpeed: 1
+  touchMoveSpeed: 27
+  touchScrollSpeed: 27
+  touchRotateSpeed: 2
+  horizontalKeyboardAxis: Horizontal
+  verticalKeyboardAxis: Horizontal
+  rotateAxis: Horizontal
+  mouseDragButton: 1
+  mouseRotateButton: 2
+  objectPos: {x: 300, y: 67.5, z: 820.3034}
+  wantYAngle: 0
+  wantXAngle: 71.125
+  keyBoardControl: 1
+  mouseRotateControl: 0
+  screenEdgeMovementControl: 1
+  mouseDragControl: 1
+  mouseScrollControl: 1
+  touchControl: 0
+  allowFollow: 1
+--- !u!81 &1236671037
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236671035}
+  m_Enabled: 1
+--- !u!124 &1236671038
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236671035}
+  m_Enabled: 1
+--- !u!92 &1236671039
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236671035}
+  m_Enabled: 1
+--- !u!20 &1236671040
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236671035}
+  m_Enabled: 1
   serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 322.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 118
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 679.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 437552, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11405500, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477224, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 13538516, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11473302, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8184298, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 104492, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2030364, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5435708, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-    - {fileID: 11405500, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-    - {fileID: 11473302, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-    - {fileID: 13538516, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-    - {fileID: 11477224, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: aa3059b8647b93a428161862127f2cf0, type: 2}
-  m_IsPrefabParent: 0
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
+--- !u!4 &1236671041
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236671035}
+  m_LocalRotation: {x: 0.58159065, y: 0, z: 0, w: 0.81348157}
+  m_LocalPosition: {x: 300, y: 152.28491, z: 812.8377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!4 &1300871581 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 84376f2a0948947b5a6dfe814a1100a0, type: 2}
