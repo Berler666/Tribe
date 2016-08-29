@@ -67,6 +67,8 @@ public class UnitPath : MonoBehaviour {
         dir *= speed * Time.fixedDeltaTime;
         controller.SimpleMove(dir); //Unit moves here
 
+        transform.LookAt(new Vector3(path.vectorPath[currentWaypoint].x, transform.position.y, path.vectorPath[currentWaypoint].z));
+
         float nextWayPointDistance = defaultNextWaypointDistance;
         if(currentWaypoint == path.vectorPath.Count - 1)
         {
