@@ -2826,7 +2826,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghost: {fileID: 1000012627645818, guid: aa0bef65764bbde48ad5b73982138f1f, type: 2}
   prefab: {fileID: 1000012627645818, guid: aa0bef65764bbde48ad5b73982138f1f, type: 2}
-  ghostMaterial: {fileID: 2100000, guid: 2fcac0c8f690abe429a33714afb553a6, type: 2}
+  GreenTransparent: {fileID: 0}
+  RedTransparent: {fileID: 0}
   GroundOnly:
     serializedVersion: 2
     m_Bits: 256

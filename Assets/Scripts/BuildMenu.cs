@@ -5,12 +5,22 @@ public class BuildMenu : MonoBehaviour {
 
     public GameObject ghost;
     public GameObject prefab;
-    public Material ghostMaterial;
+    public Material GreenTransparent;
+    public Material RedTransparent;
     public static bool ghostActive = false;
+
+    public static bool canBuildUnit;
+
+    public static BuildMenu Instance;
 
     public static Vector3 GroundMousePoint;
     public LayerMask GroundOnly;
     RaycastHit hit;
+
+    void Start()
+    {
+        Instance = this;
+    }
 
 	void Update ()
     {
