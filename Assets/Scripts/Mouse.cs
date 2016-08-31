@@ -18,7 +18,7 @@ public class Mouse : MonoBehaviour {
     public GameObject Target;
 
     private Vector3 mouseDownPoint;
-    private static Vector3 currentMousePoint; //in world space
+    public static Vector3 currentMousePoint; //in world space
 
     public static bool UserIsDragging;
     private static float TimeLimitBeforeDrag = 1f;
@@ -45,9 +45,14 @@ public class Mouse : MonoBehaviour {
         {
             currentMousePoint = hit.point;
 
-            //store point at mouse button down
-      
-            if(Input.GetMouseButtonDown(0))
+            #region cancellations
+
+            if (BuildMenu.ghostActive)
+                return;
+
+            #endregion
+
+            if (Input.GetMouseButtonDown(0))
             {
                 mouseDownPoint = hit.point;
                 TimeLeftBeforeDeclaringDrag = TimeLimitBeforeDrag;

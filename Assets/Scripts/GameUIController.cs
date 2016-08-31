@@ -55,44 +55,13 @@ public class GameUIController : MonoBehaviour {
     public void BuildPanelOpen()
     {
         buildPanel.SetActive(true);
-        Time.timeScale = 0;
+        
     }
 
     public void BuildPanelClose()
     {
         buildPanel.SetActive(false);
-        Time.timeScale = 1;
+        
     }
 
-
-    // Build Menu //
-
-
-
-    public void BuildHut()
-    {
-        buildPanel.SetActive(false);
-       // instanciateobjectonclick.hut = true;
-        Time.timeScale = 1;
-    }
-
-    public void BuildGatheringHut()
-    {
-        buildPanel.SetActive(false);
-       // instanciateobjectonclick.gatheringhut = true;
-        Time.timeScale = 1;
-    }
-
-    public void BuildChiefHut()
-    {
-        buildPanel.SetActive(false);
-       // instanciateobjectonclick.chiefhut = true;
-        Time.timeScale = 1;
-    }
-
-
-
-
-
-    // Butts
 }

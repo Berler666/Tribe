@@ -577,6 +577,14 @@ Prefab:
       propertyPath: m_FontData.m_FontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 11480274, guid: c1fc25d689a5e024f854cf33ce2b1c9f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1665899233}
+    - target: {fileID: 11480274, guid: c1fc25d689a5e024f854cf33ce2b1c9f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: buildObject1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1fc25d689a5e024f854cf33ce2b1c9f, type: 2}
   m_IsPrefabParent: 0
@@ -2789,6 +2797,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635917274}
+--- !u!1 &1665899232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1665899234}
+  - 114: {fileID: 1665899233}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1665899233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665899232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14a77449ed743442a5da21c16671fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 1000012627645818, guid: aa0bef65764bbde48ad5b73982138f1f, type: 2}
+  prefab: {fileID: 1000012627645818, guid: aa0bef65764bbde48ad5b73982138f1f, type: 2}
+  ghostMaterial: {fileID: 2100000, guid: 2fcac0c8f690abe429a33714afb553a6, type: 2}
+  GroundOnly:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!4 &1665899234
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665899232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 299.05914, y: 151.228, z: 812.83746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1001 &1736035071
 Prefab:
   m_ObjectHideFlags: 0
