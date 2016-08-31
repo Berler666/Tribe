@@ -245,6 +245,18 @@ public class ISRTSCamera : MonoBehaviour {
 		TouchControl (touchControl);
 	}
 
+    void Update()
+    {
+        if(BuildMenu.ghostActive == true)
+        {
+            mouseScrollControl = false;
+        }
+        else
+        {
+            mouseScrollControl = true;
+        }
+    }
+
 	IEnumerator UpdateKeyboardControl(){
 		while (true) {
 			if(!keyBoardControl) break;
@@ -272,14 +284,18 @@ public class ISRTSCamera : MonoBehaviour {
 	}
 
 	IEnumerator UpdateMouseScrollControl(){
-		while (true) {
+        
+        
+            while (true)
+            {
 
-			if(!mouseScrollControl) break;
+                if (!mouseScrollControl) break;
 
-			Scroll (Input.GetAxis ("Mouse ScrollWheel") * desktopScrollSpeed);
+                Scroll(Input.GetAxis("Mouse ScrollWheel") * desktopScrollSpeed);
 
-			yield return null;
-		}
+                yield return null;
+            }
+        
 	}
 
 	IEnumerator UpdateMouseDragControl(){
