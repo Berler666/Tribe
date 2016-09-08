@@ -3,9 +3,9 @@ using System.Collections;
 
 public class HightPoints : MonoBehaviour {
 
-    public float maxDifference = 5f;
+    public float maxDifference = 2f;
 
-    private float tallestHight;
+    public float tallestHight;
     private float lowestHight;
     private float greatestDistance;
 
@@ -16,7 +16,7 @@ public class HightPoints : MonoBehaviour {
         if(transform.FindChild("HightPoints"))
         {
             GameObject HightPointsObj = transform.FindChild("HightPoints").gameObject as GameObject;
-            int hightPoints = HightPointsObj.transform.GetChildCount();
+            int hightPoints = HightPointsObj.transform.childCount;
 
             float[] heights = new float[hightPoints];
 
@@ -24,11 +24,18 @@ public class HightPoints : MonoBehaviour {
             {
                 GameObject point = HightPointsObj.transform.GetChild(i).gameObject as GameObject;
 
+                
+
+
+
                 RaycastHit hit;
                 if(Physics.Raycast(point.transform.position, Vector3.down, out hit, Mathf.Infinity, GroundOnly))
                 {
                     heights[i] = hit.point.y;
                 }
+
+
+                
             }
 
             tallestHight = 0f;
@@ -47,13 +54,11 @@ public class HightPoints : MonoBehaviour {
 
             if(greatestDistance > maxDifference)
             {
-                BuildMenu.canBuildUnit = false;
-                Debug.Log("Can not Build");
+                BuildMenu.PassedHightsTest = false; 
             }
             else
             {
-                BuildMenu.canBuildUnit = true;
-                Debug.Log("Can Build");
+                BuildMenu.PassedHightsTest = true;
             }
 
         }

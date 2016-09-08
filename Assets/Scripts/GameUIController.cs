@@ -7,6 +7,8 @@ public class GameUIController : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject buildPanel;
 
+    public static bool buildMenuOpen = false;
+
     //Resources
 
     public static int Money = 5000;
@@ -54,13 +56,17 @@ public class GameUIController : MonoBehaviour {
 
     public void BuildPanelOpen()
     {
+        BuildMenu.inMenu = true;
         buildPanel.SetActive(true);
+        buildMenuOpen = true;
+
         
     }
 
     public void BuildPanelClose()
     {
         buildPanel.SetActive(false);
+        buildMenuOpen = false;
         
     }
 

@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public float thrust;
 
-    bool RtsCamera = true;
+    public static bool RtsCamera = true;
 
     public static bool isAttacking = false;
 
@@ -22,12 +22,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        RTSCamera.SetActive(true);
-        FPSCamera.SetActive(false);
-        RtsCamera = true;
-        Cursor.visible = true;
-        fpsCanvas.SetActive(false);
-        player.SetActive(false);
+        RTSMode();
         
     }
 	
@@ -43,21 +38,11 @@ public class PlayerController : MonoBehaviour {
         {
             if (RtsCamera == true)
             {
-                RTSCamera.SetActive(false);
-                FPSCamera.SetActive(true);
-                RtsCamera = false;
-                Cursor.visible = false;
-                player.SetActive(true);
-                fpsCanvas.SetActive(true);
+                FPSMode();
             }
             else if(RtsCamera == false)
             {
-                RTSCamera.SetActive(true);
-                FPSCamera.SetActive(false);
-                RtsCamera = true;
-                Cursor.visible = true;
-                player.SetActive(false);
-                fpsCanvas.SetActive(false);
+                RTSMode();
             }
         }
 
@@ -76,5 +61,31 @@ public class PlayerController : MonoBehaviour {
 
        
 
+    }
+
+    void RTSMode()
+    {
+        RTSCamera.GetComponent<Camera>().enabled = true;
+        RTSCamera.GetComponent<AudioListener>().enabled = true;
+        RTSCamera.GetComponent<ISRTSCamera>().enabled = true;
+        FPSCamera.SetActive(false);
+        RtsCamera = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        player.SetActive(false);
+        fpsCanvas.SetActive(false);
+    }
+
+    void FPSMode()
+    {
+        RTSCamera.GetComponent<Camera>().enabled = false;
+        RTSCamera.GetComponent<AudioListener>().enabled = false;
+        RTSCamera.GetComponent<ISRTSCamera>().enabled = false;
+        FPSCamera.SetActive(true);
+        RtsCamera = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        player.SetActive(true);
+        fpsCanvas.SetActive(true);
     }
 }

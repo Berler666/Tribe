@@ -223,30 +223,30 @@ public class ISRTSCamera : MonoBehaviour {
 	}
 
 	public void Start(){
-		objectPos = CalculateCurrentObjectPosition();
-		scrollValue = Mathf.Clamp01(scrollValue);
-		objectPos.y = scrollHigh.Evaluate(scrollValue);
-		wantXAngle = scrollXAngle.Evaluate(scrollValue);
-
-		Vector3 rot = selfT.eulerAngles;
-		rot.x = ISMath.WrapAngle(rot.x);
-		rot.y = ISMath.WrapAngle(rot.y);
-		wantYAngle = rot.y;
-		rot.x = scrollXAngle.Evaluate(scrollValue);
-		wantXAngle = rot.x;
-		selfT.eulerAngles = rot;
-
-		StartCoroutine (UpdateTransform ());
-
-		KeyboardControl (keyBoardControl);
-		ScreenEdgeMovementControl (screenEdgeMovementControl);
-		MouseDragControl (mouseDragControl);
-		MouseScrollControl (mouseScrollControl);
-		TouchControl (touchControl);
-	}
+        Instanciate();
+    }
 
     void Update()
     {
+        if(PlayerController.RtsCamera == false)
+        {
+            screenEdgeMovementControl = false;
+            keyBoardControl = false;
+            mouseScrollControl = false;
+            mouseDragControl = false;
+            mouseRotateControl = false;
+            
+        }
+        else if(PlayerController.RtsCamera == true)
+        {
+            screenEdgeMovementControl = true;
+            keyBoardControl = true;
+            mouseScrollControl = true;
+            mouseDragControl = true;
+            mouseRotateControl = true;
+           
+        }
+
         if(BuildMenu.ghostActive == true)
         {
             mouseScrollControl = false;
@@ -255,6 +255,30 @@ public class ISRTSCamera : MonoBehaviour {
         {
             mouseScrollControl = true;
         }
+    }
+
+    public void Instanciate()
+    {
+        objectPos = CalculateCurrentObjectPosition();
+        scrollValue = Mathf.Clamp01(scrollValue);
+        objectPos.y = scrollHigh.Evaluate(scrollValue);
+        wantXAngle = scrollXAngle.Evaluate(scrollValue);
+
+        Vector3 rot = selfT.eulerAngles;
+        rot.x = ISMath.WrapAngle(rot.x);
+        rot.y = ISMath.WrapAngle(rot.y);
+        wantYAngle = rot.y;
+        rot.x = scrollXAngle.Evaluate(scrollValue);
+        wantXAngle = rot.x;
+        selfT.eulerAngles = rot;
+
+        StartCoroutine(UpdateTransform());
+
+        KeyboardControl(keyBoardControl);
+        ScreenEdgeMovementControl(screenEdgeMovementControl);
+        MouseDragControl(mouseDragControl);
+        MouseScrollControl(mouseScrollControl);
+        TouchControl(touchControl);
     }
 
 	IEnumerator UpdateKeyboardControl(){

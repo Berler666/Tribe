@@ -47,7 +47,10 @@ public class Mouse : MonoBehaviour {
 
             #region cancellations
 
-            if (BuildMenu.ghostActive)
+            if (GameUIController.buildMenuOpen)
+                return;
+
+            if (PlayerController.RtsCamera == false)
                 return;
 
             #endregion
