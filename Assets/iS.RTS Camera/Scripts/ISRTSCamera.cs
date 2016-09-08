@@ -372,7 +372,7 @@ public class ISRTSCamera : MonoBehaviour {
 	}
 
 	public void Scroll(float value){
-		scrollValue += value;
+		scrollValue -= value;
 		scrollValue = Mathf.Clamp01(scrollValue);
 		objectPos.y = scrollHigh.Evaluate(scrollValue);
 		wantXAngle = scrollXAngle.Evaluate(scrollValue);
