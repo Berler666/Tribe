@@ -67,6 +67,7 @@ public class GameUIController : MonoBehaviour {
     {
         buildPanel.SetActive(false);
         buildMenuOpen = false;
+        BuildMenu.ghostActive = false;
         
     }
 

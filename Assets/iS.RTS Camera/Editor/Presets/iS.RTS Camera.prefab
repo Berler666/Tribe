@@ -9,25 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013245571862}
+  m_RootGameObject: {fileID: 1000011105102546}
   m_IsPrefabParent: 1
---- !u!1 &1000013245571862
+--- !u!1 &1000011105102546
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000011566982598}
-  - 20: {fileID: 20000012256708854}
-  - 92: {fileID: 92000014032927036}
-  - 124: {fileID: 124000013062592306}
-  - 81: {fileID: 81000012746434044}
-  - 114: {fileID: 114000011470316268}
-  - 114: {fileID: 114000012778688362}
-  - 135: {fileID: 135000011436592478}
-  - 114: {fileID: 114000013362577260}
-  - 114: {fileID: 114000011856094660}
+  - 4: {fileID: 4000013127298420}
+  - 20: {fileID: 20000011546653872}
+  - 92: {fileID: 92000013569966862}
+  - 124: {fileID: 124000011624641554}
+  - 81: {fileID: 81000014079007398}
+  - 114: {fileID: 114000011155632244}
   m_Layer: 0
   m_Name: iS.RTS Camera
   m_TagString: MainCamera
@@ -35,25 +31,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000011566982598
+--- !u!4 &4000013127298420
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
-  m_LocalRotation: {x: 0.43149674, y: 0, z: 0, w: 0.9021145}
-  m_LocalPosition: {x: 661.1, y: 119.76, z: 194.13678}
+  m_GameObject: {fileID: 1000011105102546}
+  m_LocalRotation: {x: 0.5363793, y: 0, z: 0, w: 0.84397703}
+  m_LocalPosition: {x: 300, y: 134.78491, z: 810.34735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!20 &20000012256708854
+--- !u!20 &20000011546653872
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
+  m_GameObject: {fileID: 1000011105102546}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -82,46 +78,26 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &81000012746434044
+--- !u!81 &81000014079007398
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
-  m_Enabled: 0
---- !u!92 &92000014032927036
+  m_GameObject: {fileID: 1000011105102546}
+  m_Enabled: 1
+--- !u!92 &92000013569966862
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
+  m_GameObject: {fileID: 1000011105102546}
   m_Enabled: 1
---- !u!114 &114000011470316268
+--- !u!114 &114000011155632244
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4237896843f28d42880d1b0e2bdf8d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScrollSpeed: 50
-  ScrollEdge: 0.005
-  PanSpeed: 25
-  zoomRange: {x: -15, y: 15}
-  CurrentZoom: 0
-  ZoomZpeed: 1
-  ZoomRotation: 1
-  zoomAngleRange: {x: 0, y: 150}
-  rotateSpeed: 70
---- !u!114 &114000011856094660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
+  m_GameObject: {fileID: 1000011105102546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79dcea92b2fe74013a15122c6e1c03f7, type: 3}
@@ -132,12 +108,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 12
+      value: 45
       inSlope: 208.1285
-      outSlope: 200
+      outSlope: 100
       tangentMode: 0
     - time: 1
-      value: 85
+      value: 60
       inSlope: 1
       outSlope: 0
       tangentMode: 0
@@ -148,13 +124,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 100
+      value: 15
       inSlope: 0
-      outSlope: 80
+      outSlope: 70
       tangentMode: 0
     - time: 1
-      value: 180
-      inSlope: 80
+      value: 85
+      inSlope: 70
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
@@ -162,90 +138,46 @@ MonoBehaviour:
     m_RotationOrder: 4
   groundHigh: 0
   minHigh: 0
-  groundHighTest: 0
+  groundHighTest: 1
   groundLayer: 8
-  scrollValue: 0.247
+  scrollValue: 0.5
   unlockWhenMove: 1
-  movementLerpSpeed: 5
-  rotationLerpSpeed: 5
+  movementLerpSpeed: 4
+  rotationLerpSpeed: 4
   bound:
     serializedVersion: 2
-    x: -16
-    y: 0
-    width: 1016
-    height: 1000
+    x: 150
+    y: 50
+    width: 750
+    height: 900
   followingTarget: {fileID: 0}
   fixedPoint: {fileID: 0}
-  desktopScrollSpeed: 0.13
-  desktopMoveSpeed: 3
-  desktopMoveDragSpeed: 200
-  desktopRotateSpeed: 5
+  desktopScrollSpeed: 0.5
+  desktopMoveSpeed: 125
+  desktopMoveDragSpeed: 175
+  desktopRotateSpeed: 0.1
   touchMoveSpeed: 27
   touchScrollSpeed: 27
   touchRotateSpeed: 2
   horizontalKeyboardAxis: Horizontal
-  verticalKeyboardAxis: Horizontal
-  rotateAxis: Horizontal
+  verticalKeyboardAxis: Vertical
+  rotateAxis: Cancel
   mouseDragButton: 1
   mouseRotateButton: 2
-  objectPos: {x: 661.1, y: 119.76, z: 254.7319}
+  objectPos: {x: 300, y: 50, z: 820.3034}
   wantYAngle: 0
-  wantXAngle: 51.125168
-  keyBoardControl: 0
+  wantXAngle: 64.875
+  keyBoardControl: 1
   mouseRotateControl: 0
   screenEdgeMovementControl: 1
   mouseDragControl: 0
-  mouseScrollControl: 0
+  mouseScrollControl: 1
   touchControl: 0
   allowFollow: 1
---- !u!114 &114000012778688362
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbecbd8e6b9fb7340ac071424cb2c1fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera1: {fileID: 1000013245571862}
-  placed: 0
-  Hut: {fileID: 142264, guid: 0b2afb7ea3d84334ebf07c9ac4c7ea14, type: 2}
-  hutPrice: 100
-  GatheringHut: {fileID: 182716, guid: c064e6b768393ac4bbf82d474d9bab89, type: 2}
-  ghutPrice: 150
-  Chiefhut: {fileID: 178638, guid: 658b96c4af8dd914ea4886682b13b5dd, type: 2}
-  chutPrice: 200
---- !u!114 &114000013362577260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe90e0937e3c67d4386b7c7a7c38ea06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionCirclePrefab: {fileID: 166266, guid: dc884a6ec589ce249acc9b5326859165,
-    type: 2}
---- !u!124 &124000013062592306
+--- !u!124 &124000011624641554
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
+  m_GameObject: {fileID: 1000011105102546}
   m_Enabled: 1
---- !u!135 &135000011436592478
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013245571862}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}

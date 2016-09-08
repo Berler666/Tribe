@@ -11,11 +11,8 @@ public class UnitGhost : MonoBehaviour {
 
         if(Input.GetMouseButtonUp(1))
         {
-            
             BuildMenu.ghostActive = false;
             Destroy(this.gameObject);
-            
-            
         }
 
         ApplyRotation();

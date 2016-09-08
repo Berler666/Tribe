@@ -247,14 +247,9 @@ public class ISRTSCamera : MonoBehaviour {
            
         }
 
-        if(BuildMenu.ghostActive == true)
-        {
-            mouseScrollControl = false;
-        }
-        else
-        {
-            mouseScrollControl = true;
-        }
+        
+
+
     }
 
     public void Instanciate()
