@@ -20,6 +20,6 @@ public class PopulationController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     { 
-            populationCounter.text = "Population: " + populationCount + " | " + populationCountLmit;
+            populationCounter.text = "Population: " + populationCount + "|" + populationCountLmit;
 	}
 }
