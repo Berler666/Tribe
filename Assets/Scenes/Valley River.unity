@@ -741,6 +741,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: buildObject1
       objectReference: {fileID: 0}
+    - target: {fileID: 22459622, guid: c1fc25d689a5e024f854cf33ce2b1c9f, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 22459622, guid: c1fc25d689a5e024f854cf33ce2b1c9f, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1fc25d689a5e024f854cf33ce2b1c9f, type: 2}
   m_IsPrefabParent: 0
@@ -3617,6 +3625,7 @@ GameObject:
   - 114: {fileID: 1665899233}
   - 114: {fileID: 1665899236}
   - 114: {fileID: 1665899235}
+  - 114: {fileID: 1665899237}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -3694,6 +3703,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameRange: 60
+--- !u!114 &1665899237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665899232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cf28ee94c87414ba5f293673d91882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  populationCountLmit: 10
+  populationCountMaxLmit: 100
+  populationCounter: {fileID: 1888297548}
 --- !u!1001 &1736035071
 Prefab:
   m_ObjectHideFlags: 0
@@ -4262,6 +4285,12 @@ Transform:
   - {fileID: 1580382709}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &1888297548 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11461678, guid: c1fc25d689a5e024f854cf33ce2b1c9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 116911629}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1900795719
 Prefab:
   m_ObjectHideFlags: 0

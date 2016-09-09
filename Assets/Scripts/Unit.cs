@@ -19,6 +19,11 @@ public class Unit : MonoBehaviour {
         Physics.IgnoreLayerCollision(10, 10, true);
     }
 
+    void Start()
+    {
+        PopulationController.populationCount += 1;
+    }
+
     void Update()
     {
         //if the unit is not selected get screen space

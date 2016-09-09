@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class PopulationController : MonoBehaviour {
 
     public static int populationCount = 0;
-    public static int populationCountLmit = 10;
-    public static int populationCountMaxLmit = 100;
+    public int populationCountLmit = 10;
+    public int populationCountMaxLmit = 100;
 
     public Text populationCounter;
 
