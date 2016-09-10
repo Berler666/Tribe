@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
         if (RTSCamera == false)
         {
 
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown("x"))
             {
                 Transform playerPos = player.GetComponent<Transform>();
                 GameObject create;

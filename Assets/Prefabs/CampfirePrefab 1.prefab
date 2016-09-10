@@ -23,7 +23,7 @@ GameObject:
   - 23: {fileID: 23000011007989262}
   - 64: {fileID: 64000011178538868}
   - 65: {fileID: 65000013605719498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CampfirePrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013708550884}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 264.87732, y: 85.65078, z: 773.90045}
+  m_LocalPosition: {x: 258.2417, y: 86.19251, z: 754.64636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -94,7 +94,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 6376a83d96872e245a78bc7fef367eeb, type: 3}
 --- !u!65 &65000013605719498
 BoxCollider:
@@ -103,8 +103,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013708550884}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1473818, y: 2.962645, z: 1.630126}
-  m_Center: {x: -0.021586, y: 0.016147494, z: 0.68999195}
+  m_Size: {x: 5, y: 5, z: 4}
+  m_Center: {x: -0.021586, y: 0, z: 2}

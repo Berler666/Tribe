@@ -83,9 +83,10 @@ public class BuildMenu : MonoBehaviour {
                 if(ghost.transform.FindChild("HightPoints"))
                 {
                     newUnit.transform.position = new Vector3(newUnit.transform.position.x, ghost.GetComponent<HightPoints>().tallestHight, newUnit.transform.position.z);
+                    
                 }
-
                 AstarPath.active.UpdateGraphs(newUnit.GetComponent<BoxCollider>().bounds);
+
             }
 
             if (Input.GetMouseButtonUp(0) && !canBuildUnit && inMenu)

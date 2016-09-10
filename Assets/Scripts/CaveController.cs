@@ -5,52 +5,125 @@ using UnityEngine.UI;
 public class CaveController : MonoBehaviour {
 
     public Slider caveClaim;
-    public GameObject caveCanvas;
+    public GameObject claimedText;
+    public GameObject caveClaimCanvas;
+    public GameObject CaveCanvas;
+
+    public GameObject homePanel;
+    public GameObject statsPanel;
+
+    
+
+   
 
     public bool canClaim = false;
+    public bool caveClaimed = false;
+   
+    float time;
+    float maxTime = 50;
 
 	// Use this for initialization
 	void Start () {
 
         
-        caveCanvas.SetActive(false);
+        caveClaimCanvas.SetActive(false);
+        caveClaim.maxValue = maxTime;
+        claimedText.SetActive(false);
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
 
-        if(canClaim == true)
+
+        if (canClaim == true)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKey(KeyCode.E))
             {
-                caveClaim.GetComponent<Slider>().value += 0.1f;
-            }
-            else
+                time += Time.deltaTime;
+
+                if(time < maxTime)
+                {
+                    caveClaim.GetComponent<Slider>().value = Mathf.Lerp(0f, maxTime, time);
+                   
+                }
+
+                 if(caveClaim.value == maxTime)
+                {
+                    Debug.Log("Cave Claimed");
+                    claimedText.SetActive(true);
+                    caveClaimed = true;
+                    StartCoroutine(DestroyClaimBar());
+                }
+                
+            } else if(!Input.GetKey(KeyCode.E) && caveClaim.value != maxTime)
             {
-                caveClaim.GetComponent<Slider>().value = 0;
+                caveClaim.value = 0;
+                time = 0;
             }
+       
         }
 	
 	}
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Player" && caveClaimed == false)
         {
-            caveCanvas.SetActive(true);
+            caveClaimCanvas.SetActive(true);
             canClaim = true;
+        }
 
-
+        if(caveClaimed == true)
+        {
+            OpenCaveMenu();
         }
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Player" && caveClaimed == false)
         {
-            caveCanvas.SetActive(false);
+            caveClaimCanvas.SetActive(false);
             canClaim = false;
         }
+
+        if (caveClaimed == true)
+        {
+            CloseCaveMenu();
+        }
+    }
+
+
+    public IEnumerator DestroyClaimBar()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(caveClaimCanvas);
+        OpenCaveMenu();
+    }
+
+    public void OpenCaveMenu()
+    {
+        CaveCanvas.SetActive(true);
+       
+    }
+
+    public void CloseCaveMenu()
+    {
+        CaveCanvas.SetActive(false);
+       
+    }
+
+    public void HomePanel()
+    {
+        homePanel.SetActive(true);
+        statsPanel.SetActive(false);
+    }
+
+    public void StatsPanel()
+    {
+        statsPanel.SetActive(true);
+        homePanel.SetActive(false);
     }
 }

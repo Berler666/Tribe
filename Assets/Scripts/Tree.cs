@@ -23,8 +23,8 @@ public class Tree : MonoBehaviour {
     IEnumerator spawnSticks()
     {
         yield return new WaitForSeconds(spawntime);
-        spawntime = Random.Range(1, 10);
-        Instantiate(stickPrefab, new Vector3(this.transform.position.x + Random.Range(-20, 20), this.transform.position.y + 1, this.transform.position.z + Random.Range(-20, 20)), Quaternion.identity);
+        spawntime = Random.Range(100f, 500f);
+        Instantiate(stickPrefab, new Vector3(this.transform.position.x + Random.Range(-7, 7), this.transform.position.y + 1, this.transform.position.z + Random.Range(-7, 7)), Quaternion.identity);
         StartCoroutine(spawnSticks());
     }
 }

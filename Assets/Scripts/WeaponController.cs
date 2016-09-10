@@ -29,13 +29,35 @@ public class WeaponController : MonoBehaviour {
             SwitchWeapon(2);
         }
 
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            
+            SwitchWeapon(currentWeapon += 1);
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            SwitchWeapon(currentWeapon -= 1);
+        }
+
 
 
     }
 
     void SwitchWeapon(int index)
     {
+        
         currentWeapon = index;
+
+        if(currentWeapon > weapons.Length - 1)
+        {
+            currentWeapon = -1;
+        }
+        else if(currentWeapon < 0)
+        {
+            currentWeapon = weapons.Length;
+        }
+
         for(int i = 0; i < weapons.Length; i++)
         {
             if(i == index)
