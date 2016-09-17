@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public float thrust;
 
-    public static bool RtsCamera = true;
+    public static bool RtsCamera = false;
 
     public static bool isAttacking = false;
 

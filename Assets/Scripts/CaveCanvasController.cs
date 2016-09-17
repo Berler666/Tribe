@@ -10,13 +10,13 @@ public class CaveCanvasController : MonoBehaviour {
     {
         if(caveCanvas == true)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+           // Cursor.visible = true;
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.visible = false;
         }
     }
 
