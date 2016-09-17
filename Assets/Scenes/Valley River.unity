@@ -250,6 +250,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11403046, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
+      propertyPath: sunTransform
+      value: 
+      objectReference: {fileID: 1580382709}
+    - target: {fileID: 23000011614250314, guid: 81b0e9f559d6cab4caa3e303947c3c48,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ffaa529f2efcfb41b83856b79e6bd24, type: 2}
+    - target: {fileID: 114000011827233340, guid: 81b0e9f559d6cab4caa3e303947c3c48,
+        type: 2}
+      propertyPath: sunTransform
+      value: 
+      objectReference: {fileID: 1580382709}
     - target: {fileID: 4000010456655400, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.27059808
@@ -265,19 +279,6 @@ Prefab:
     - target: {fileID: 4000010456655400, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.27059808
-      objectReference: {fileID: 0}
-    - target: {fileID: 11403046, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
-      propertyPath: sunTransform
-      value: 
-      objectReference: {fileID: 1580382709}
-    - target: {fileID: 23000011614250314, guid: 81b0e9f559d6cab4caa3e303947c3c48,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5ffaa529f2efcfb41b83856b79e6bd24, type: 2}
-    - target: {fileID: 143296, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
@@ -840,7 +841,7 @@ GameObject:
   - 224: {fileID: 174162488}
   - 222: {fileID: 174162490}
   - 114: {fileID: 174162489}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1035,7 @@ GameObject:
   - 224: {fileID: 345421951}
   - 222: {fileID: 345421950}
   - 114: {fileID: 345421949}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1270,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 404292738}
 --- !u!1 &411664530 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 165042, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
+  m_PrefabParentObject: {fileID: 1000013873319428, guid: 81b0e9f559d6cab4caa3e303947c3c48,
+    type: 2}
   m_PrefabInternal: {fileID: 80171300}
 --- !u!1001 &412460825
 Prefab:
@@ -2630,7 +2632,7 @@ GameObject:
   - 224: {fileID: 1078013039}
   - 222: {fileID: 1078013041}
   - 114: {fileID: 1078013040}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2916,7 +2918,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!20 &1225997267 stripped
 Camera:
-  m_PrefabParentObject: {fileID: 2081374, guid: 81b0e9f559d6cab4caa3e303947c3c48,
+  m_PrefabParentObject: {fileID: 20000014271244418, guid: 81b0e9f559d6cab4caa3e303947c3c48,
     type: 2}
   m_PrefabInternal: {fileID: 80171300}
 --- !u!1 &1236671035
@@ -3679,7 +3681,7 @@ GameObject:
   - 222: {fileID: 1386415067}
   - 114: {fileID: 1386415066}
   - 114: {fileID: 1386415065}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HomeTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3930,7 +3932,7 @@ GameObject:
   - 114: {fileID: 1407128075}
   - 114: {fileID: 1407128079}
   - 65: {fileID: 1407128078}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CaveCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4046,7 +4048,7 @@ GameObject:
   - 224: {fileID: 1414873937}
   - 222: {fileID: 1414873939}
   - 114: {fileID: 1414873938}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4324,7 +4326,7 @@ GameObject:
   - 224: {fileID: 1591313705}
   - 222: {fileID: 1591313707}
   - 114: {fileID: 1591313706}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5589,7 +5591,7 @@ GameObject:
   - 222: {fileID: 1973506244}
   - 114: {fileID: 1973506243}
   - 114: {fileID: 1973506242}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StatsTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5710,7 +5712,7 @@ GameObject:
   - 224: {fileID: 1987808764}
   - 222: {fileID: 1987808766}
   - 114: {fileID: 1987808765}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
