@@ -3,21 +3,41 @@ using System.Collections;
 
 public class CaveCanvasController : MonoBehaviour {
 
+    public GameObject workBenchUI;
     public GameObject caveUI;
     public static bool caveCanvas = false;
+    public GameObject fpsHud;
+    public GameObject player;
+    public GameObject CaveUICamera;
 
     void Update()
     {
-        if(caveCanvas == true)
+       
+       if(caveCanvas == true)
         {
-            //Cursor.lockState = CursorLockMode.None;
-           // Cursor.visible = true;
+            if(Input.GetKey(KeyCode.E))
+            {
+                workBenchUI.SetActive(false);
+                fpsHud.SetActive(false);
+                caveUI.SetActive(true);
+                player.SetActive(false);
+                CaveUICamera.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+            }
         }
-        else
-        {
-            //Cursor.lockState = CursorLockMode.Locked;
-           // Cursor.visible = false;
-        }
+    }
+
+    public void ExitCaveMenu()
+    {
+        workBenchUI.SetActive(true);
+        fpsHud.SetActive(true);
+        caveUI.SetActive(false);
+        player.SetActive(true);
+        CaveUICamera.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void OnTriggerEnter(Collider col)
@@ -25,7 +45,8 @@ public class CaveCanvasController : MonoBehaviour {
         if(col.tag == "Player")
         {
             caveCanvas = true;
-            caveUI.gameObject.SetActive(true);
+            workBenchUI.gameObject.SetActive(true);
+            
         }
     }
 
@@ -34,7 +55,9 @@ public class CaveCanvasController : MonoBehaviour {
         if (col.tag == "Player")
         {
             caveCanvas = false;
-            caveUI.gameObject.SetActive(false);
+            workBenchUI.gameObject.SetActive(false);
+            caveUI.SetActive(false);
+           
         }
     }
 }
