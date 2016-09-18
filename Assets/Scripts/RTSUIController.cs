@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameUIController : MonoBehaviour {
+public class RTSUIController : MonoBehaviour {
 
     public GameObject pauseMenu;
     public GameObject buildPanel;
