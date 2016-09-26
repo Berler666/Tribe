@@ -466,6 +466,11 @@ Prefab:
       propertyPath: m_TagString
       value: units
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013127726156, guid: 69f1b43cfb2acf44ab3b19c550eb8043,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1329322945}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69f1b43cfb2acf44ab3b19c550eb8043, type: 2}
   m_IsPrefabParent: 0
@@ -7908,26 +7913,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
---- !u!1 &1332866768 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011153058870, guid: 69f1b43cfb2acf44ab3b19c550eb8043,
-    type: 2}
-  m_PrefabInternal: {fileID: 64792905}
---- !u!114 &1332866779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1332866768}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8281b40e2f96078458b013e044d6820d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  target: {fileID: 1329322945}
-  speed: 350
-  defaultNextWaypointDistance: 10
 --- !u!1001 &1337728692
 Prefab:
   m_ObjectHideFlags: 0
@@ -10667,6 +10652,11 @@ Prefab:
       propertyPath: m_TagString
       value: units
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013127726156, guid: 69f1b43cfb2acf44ab3b19c550eb8043,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1329322945}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69f1b43cfb2acf44ab3b19c550eb8043, type: 2}
   m_IsPrefabParent: 0
@@ -10803,26 +10793,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &1750866760 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011153058870, guid: 69f1b43cfb2acf44ab3b19c550eb8043,
-    type: 2}
-  m_PrefabInternal: {fileID: 1747621546}
---- !u!114 &1750866771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1750866760}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8281b40e2f96078458b013e044d6820d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  target: {fileID: 1329322945}
-  speed: 350
-  defaultNextWaypointDistance: 10
 --- !u!1 &1752129219
 GameObject:
   m_ObjectHideFlags: 0
