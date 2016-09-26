@@ -16,6 +16,7 @@ public class WeaponController : MonoBehaviour {
         
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
+			
             SwitchWeapon(0);
             }
 

@@ -8,16 +8,16 @@ public class CaveCanvasController : MonoBehaviour {
 
     void Update()
     {
-        if(caveCanvas == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+//        if(caveCanvas == true)
+//        {
+//            Cursor.lockState = CursorLockMode.None;
+//            Cursor.visible = true;
+//        }
+//        else
+//        {
+//            Cursor.lockState = CursorLockMode.Locked;
+//            Cursor.visible = false;
+//        }
     }
 
     void OnTriggerEnter(Collider col)
