@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour {
     public bool Selected = false;
 
     public bool isWalkable = true;
+    public bool canCollectResourses = true;
 
 
 

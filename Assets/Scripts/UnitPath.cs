@@ -15,6 +15,7 @@ public class UnitPath : MonoBehaviour {
 
     public Transform target;
     public Vector3 targetPos;
+    public Vector3 gatherPoint;
 
     
 
@@ -37,9 +38,18 @@ public class UnitPath : MonoBehaviour {
     {
         if(unit.Selected && unit.isWalkable)
         {
-            if(Input.GetMouseButtonDown(1))
+            if(Input.GetMouseButtonDown(1) && Mouse.isFood == false)
             {
                 seeker.StartPath(transform.position, Mouse.RightClickPoint, OnPathComplete);
+            }
+        }
+
+        if(unit.Selected && unit.canCollectResourses)
+        {
+            if(Input.GetMouseButtonDown(1) && Mouse.isFood == true)
+            {
+                gatherPoint = Mouse.RightClickFoodPoint;
+                seeker.StartPath(transform.position, gatherPoint, OnPathComplete);
             }
         }
 
@@ -58,6 +68,7 @@ public class UnitPath : MonoBehaviour {
             currentWaypoint = 0;
         }
     }
+
 
     public void FixedUpdate()
     {
