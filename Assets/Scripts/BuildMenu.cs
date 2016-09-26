@@ -46,18 +46,7 @@ public class BuildMenu : MonoBehaviour {
 
      }
 
-    public void buildObject1()
-    {
-        if(ghostActive)
-        {
-            Destroy(ghost);
-        }
-        ghost = Instantiate(campfireGhostPrefab, Vector3.zero, Quaternion.Euler(-90, 0, 0)) as GameObject;
-        ghostActive = true;
-        Building = campFirePrefab;
-        inMenu = true;
-        
-    }
+   
 
     void LateUpdate()
     {
@@ -79,13 +68,15 @@ public class BuildMenu : MonoBehaviour {
                 Debug.Log("Building the unit");
                 GameObject newUnit = Instantiate(Building, GroundMousePoint, Quaternion.identity) as GameObject;
                 newUnit.transform.eulerAngles = ghost.transform.eulerAngles;
+                ghostActive = false;
+                Destroy(ghost);
 
                 if(ghost.transform.FindChild("HightPoints"))
                 {
                     newUnit.transform.position = new Vector3(newUnit.transform.position.x, ghost.GetComponent<HightPoints>().tallestHight, newUnit.transform.position.z);
                     
                 }
-                AstarPath.active.UpdateGraphs(newUnit.GetComponent<BoxCollider>().bounds);
+               AstarPath.active.UpdateGraphs(newUnit.GetComponent<BoxCollider>().bounds);
 
             }
 
@@ -96,5 +87,18 @@ public class BuildMenu : MonoBehaviour {
         }
 
         inMenu = false;
+    }
+
+    public void buildObject1()
+    {
+        if (ghostActive)
+        {
+            Destroy(ghost);
+        }
+        ghost = Instantiate(campfireGhostPrefab, Vector3.zero, Quaternion.Euler(-90, 0, 0)) as GameObject;
+        Building = campFirePrefab;
+        ghostActive = true;
+        inMenu = true;
+
     }
 }

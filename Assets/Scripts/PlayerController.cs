@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
     public static bool isAttacking = false;
 
+    public GameObject pauseMenu;
+
 
 	// Use this for initialization
 	void Start ()
@@ -29,10 +31,6 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown("q"))
-        {
-            isAttacking = true;
-        }
 
 
 
@@ -66,8 +64,30 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-       
+       if(RtsCamera == false)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseMenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+            }
+        }
 
+    }
+
+    public void Continue()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     void RTSMode()

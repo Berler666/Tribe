@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerResources : MonoBehaviour {
 
-    public static int ReserchPoints;
+    public static int ReserchPoints = 1000;
 
     public static int food = 10;
     public static int wood = 0;

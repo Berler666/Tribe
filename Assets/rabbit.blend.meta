@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 2e8778ba60ffe134a848723d52056a79
+timeCreated: 1474270520
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BackLeg_L
+    100004: BackLeg_L_001
+    100006: BackLeg_R
+    100008: BackLeg_R_001
+    100010: BackPaw_L
+    100012: BackPaw_R
+    100014: BackUpLeg_L
+    100016: BackUpLeg_R
+    100018: Ear_L
+    100020: Ear_R
+    100022: FrontLeg_L
+    100024: FrontLeg_R
+    100026: FrontPaw_L
+    100028: FrontPaw_R
+    100030: FrontUpLeg_L
+    100032: FrontUpLeg_R
+    100034: Fur
+    100036: Head
+    100038: Hips
+    100040: IK_Head
+    100042: Main
+    100044: Neck
+    100046: Plane
+    100048: Rabbit
+    100050: //RootNode
+    100052: Spine
+    100054: Spine_001
+    100056: Tail
+    400000: Armature
+    400002: BackLeg_L
+    400004: BackLeg_L_001
+    400006: BackLeg_R
+    400008: BackLeg_R_001
+    400010: BackPaw_L
+    400012: BackPaw_R
+    400014: BackUpLeg_L
+    400016: BackUpLeg_R
+    400018: Ear_L
+    400020: Ear_R
+    400022: FrontLeg_L
+    400024: FrontLeg_R
+    400026: FrontPaw_L
+    400028: FrontPaw_R
+    400030: FrontUpLeg_L
+    400032: FrontUpLeg_R
+    400034: Fur
+    400036: Head
+    400038: Hips
+    400040: IK_Head
+    400042: Main
+    400044: Neck
+    400046: Plane
+    400048: Rabbit
+    400050: //RootNode
+    400052: Spine
+    400054: Spine_001
+    400056: Tail
+    2300000: Plane
+    3300000: Plane
+    4300000: Fur
+    4300002: Rabbit
+    4300004: Plane
+    7400000: Default Take
+    7400002: Basic
+    7400004: Dead
+    7400006: Dying_000
+    7400008: Dying_001
+    7400010: Guarding
+    7400012: Jump
+    7400014: Running
+    7400016: Sitting_000
+    7400018: Sitting_001
+    9500000: //RootNode
+    13700000: Fur
+    13700002: Rabbit
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

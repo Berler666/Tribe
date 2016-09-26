@@ -6,6 +6,7 @@ public class RTSUIController : MonoBehaviour {
 
     public GameObject pauseMenu;
     public GameObject buildPanel;
+    
 
     public static bool buildMenuOpen = false;
 
@@ -35,6 +36,11 @@ public class RTSUIController : MonoBehaviour {
 
         woodText.GetComponent<Text>();
         woodText.text = "Wood: " + Wood;
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseButton();
+        }
     }
 
     public void PauseButton()
@@ -59,6 +65,7 @@ public class RTSUIController : MonoBehaviour {
         BuildMenu.inMenu = true;
         buildPanel.SetActive(true);
         buildMenuOpen = true;
+        PlayerController.RtsCamera = false;
 
         
     }
@@ -66,9 +73,9 @@ public class RTSUIController : MonoBehaviour {
     public void BuildPanelClose()
     {
         buildPanel.SetActive(false);
-        buildMenuOpen = false;
         BuildMenu.ghostActive = false;
-        
+        buildMenuOpen = false;
+        PlayerController.RtsCamera = true;
     }
 
 }
