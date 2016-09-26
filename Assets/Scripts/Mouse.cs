@@ -37,6 +37,8 @@ public class Mouse : MonoBehaviour {
 
     #endregion
 
+    public GameObject markerPrefab;
+
     void Update ()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -100,8 +102,8 @@ public class Mouse : MonoBehaviour {
                     //When we click the right mouse button, instaniate target
                     if (Input.GetMouseButtonDown(1))
                     {
-                        //GameObject TargetObj = Instantiate(Target, hit.point, Quaternion.identity) as GameObject;
-                        //TargetObj.name = "Taget Instantiated";
+                        Instantiate(markerPrefab, new Vector3(hit.point.x, hit.point.y+3, hit.point.z), Quaternion.identity);
+                        
                         RightClickPoint = hit.point;
                     }
                     else if (Input.GetMouseButtonUp(0) && DidUserClickLeftMouse(mouseDownPoint))

@@ -16,10 +16,7 @@ public class Unit : MonoBehaviour {
 
 
 
-    void Awake()
-    {
-        Physics.IgnoreLayerCollision(10, 10, true);
-    }
+   
 
     void Start()
     {
