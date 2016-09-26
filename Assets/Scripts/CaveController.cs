@@ -7,10 +7,12 @@ public class CaveController : MonoBehaviour {
     public Slider caveClaim;
     public GameObject claimedText;
     public GameObject caveClaimCanvas;
-    public GameObject CaveCanvas;
+    
 
     public GameObject homePanel;
     public GameObject statsPanel;
+
+    public GameObject workBench;
 
     
 
@@ -54,6 +56,7 @@ public class CaveController : MonoBehaviour {
                     Debug.Log("Cave Claimed");
                     claimedText.SetActive(true);
                     caveClaimed = true;
+                    canClaim = false;
                     StartCoroutine(DestroyClaimBar());
                 }
                 
@@ -75,10 +78,7 @@ public class CaveController : MonoBehaviour {
             canClaim = true;
         }
 
-        if(caveClaimed == true)
-        {
-            OpenCaveMenu();
-        }
+        
     }
 
     void OnTriggerExit(Collider col)
@@ -89,10 +89,7 @@ public class CaveController : MonoBehaviour {
             canClaim = false;
         }
 
-        if (caveClaimed == true)
-        {
-            CloseCaveMenu();
-        }
+       
     }
 
 
@@ -100,20 +97,11 @@ public class CaveController : MonoBehaviour {
     {
         yield return new WaitForSeconds(3f);
         Destroy(caveClaimCanvas);
-        OpenCaveMenu();
+        workBench.SetActive(true);
     }
 
-    public void OpenCaveMenu()
-    {
-        CaveCanvas.SetActive(true);
-       
-    }
+    
 
-    public void CloseCaveMenu()
-    {
-        CaveCanvas.SetActive(false);
-       
-    }
 
     public void HomePanel()
     {

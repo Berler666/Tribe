@@ -237,14 +237,14 @@ public class ISRTSCamera : MonoBehaviour {
             mouseRotateControl = false;
             
         }
-        else if(PlayerController.RtsCamera == true)
+
+        if(PlayerController.RtsCamera == true)
         {
-            screenEdgeMovementControl = true;
-            keyBoardControl = true;
-            mouseScrollControl = true;
-            mouseDragControl = true;
-            mouseRotateControl = true;
-           
+                screenEdgeMovementControl = true;
+                keyBoardControl = true;
+                mouseScrollControl = true;
+                mouseDragControl = true;
+                mouseRotateControl = true;
         }
 
         

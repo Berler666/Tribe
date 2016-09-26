@@ -13,15 +13,23 @@ public class UnitPath : MonoBehaviour {
     public float defaultNextWaypointDistance = 10;
     private int currentWaypoint = 0;
 
+    public Transform target;
+    public Vector3 targetPos;
 
-    
+
+
+
 
     public void Start()
     {
+
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
         unit = GetComponent<Unit>();
+        targetPos = target.transform.position;
+        
     }
+
 
     public void  LateUpdate()
     {
@@ -32,6 +40,9 @@ public class UnitPath : MonoBehaviour {
                 seeker.StartPath(transform.position, Mouse.RightClickPoint, OnPathComplete);
             }
         }
+
+        
+        
     }
 
     //Path finding logic

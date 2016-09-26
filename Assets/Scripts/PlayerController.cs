@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour {
 
     public float thrust;
 
-    public static bool RtsCamera = true;
+    public static bool RtsCamera = false;
 
     public static bool isAttacking = false;
+
+    public GameObject pauseMenu;
 
 
 	// Use this for initialization
@@ -29,20 +31,23 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown("q"))
-        {
-            isAttacking = true;
-        }
+
+
 
         if (Input.GetKeyDown("p"))
         {
             if (RtsCamera == true)
             {
                 FPSMode();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else if(RtsCamera == false)
             {
                 RTSMode();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                
             }
         }
 
@@ -59,8 +64,30 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-       
+       if(RtsCamera == false)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseMenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+            }
+        }
 
+    }
+
+    public void Continue()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     void RTSMode()
@@ -70,8 +97,7 @@ public class PlayerController : MonoBehaviour {
         RTSCamera.GetComponent<ISRTSCamera>().enabled = true;
         FPSCamera.SetActive(false);
         RtsCamera = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+       
         player.SetActive(false);
         fpsCanvas.SetActive(false);
     }
@@ -83,8 +109,7 @@ public class PlayerController : MonoBehaviour {
         RTSCamera.GetComponent<ISRTSCamera>().enabled = false;
         FPSCamera.SetActive(true);
         RtsCamera = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
         player.SetActive(true);
         fpsCanvas.SetActive(true);
     }

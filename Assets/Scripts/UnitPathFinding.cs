@@ -9,18 +9,17 @@ public class UnitPathFinding : MonoBehaviour {
     private CharacterController controller;
     public Path path;
 
+    public Transform target;
+
     public float speed;
-
-
-    // the max distance from the AI to the way point for it to continue to the next waypoint
-    public float nextWaypointDistance = 10;
+    public float defaultNextWaypointDistance = 10;
 
     //Current waypoint
     private int currentWaypoint = 0;
 
     public void Start()
     {
-        targetPosition = GameObject.Find("Target").transform.position;
+        targetPosition = target.transform.position;
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
 
@@ -35,15 +34,19 @@ public class UnitPathFinding : MonoBehaviour {
             path = p;
             //reset waypoint counter
             currentWaypoint = 0;
+            
         }
     }
 
     public void FixedUpdate()
     {
+
+        
+
         if (path == null)
             return;
-        
-        if(currentWaypoint >= path.vectorPath.Count)
+
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             return;
         }
@@ -53,8 +56,16 @@ public class UnitPathFinding : MonoBehaviour {
         dir *= speed * Time.fixedDeltaTime;
         controller.SimpleMove(dir); //Unit moves here
 
+        transform.LookAt(new Vector3(path.vectorPath[currentWaypoint].x, transform.position.y, path.vectorPath[currentWaypoint].z));
+
+        float nextWayPointDistance = defaultNextWaypointDistance;
+        if (currentWaypoint == path.vectorPath.Count - 1)
+        {
+            nextWayPointDistance = 0f;
+        }
+
         //check if close enough to the current waypoint, if  yes, move on to next waypoint
-        if(Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
+        if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWayPointDistance)
         {
             currentWaypoint++;
             return;
