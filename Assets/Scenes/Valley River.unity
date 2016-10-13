@@ -9909,6 +9909,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1580382709}
   - 108: {fileID: 1580382708}
+  - 114: {fileID: 1580382710}
   m_Layer: 0
   m_Name: Directional light
   m_TagString: Untagged
@@ -9963,6 +9964,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1883814231}
   m_RootOrder: 0
+--- !u!114 &1580382710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1580382707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839f2494fc0a11f44b4172e88a2a031e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exposure: 1
+  time: 10
+  sunTransform: {fileID: 0}
+  sunLight: {fileID: 0}
+  days: 0
+  intensity: 0
+  fogDay: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  fogNight: {r: 0, g: 0, b: 1, a: 1}
+  speed: 0
 --- !u!4 &1586394098 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
