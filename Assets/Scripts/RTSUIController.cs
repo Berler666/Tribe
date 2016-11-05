@@ -6,9 +6,11 @@ public class RTSUIController : MonoBehaviour {
 
     public GameObject pauseMenu;
     public GameObject buildPanel;
-    
+    public GameObject optionsPanel;
+
 
     public static bool buildMenuOpen = false;
+    
 
     //Resources
 
@@ -24,6 +26,7 @@ public class RTSUIController : MonoBehaviour {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
         buildPanel.SetActive(false);
+        optionsPanel.SetActive(false);
 
        
 	
@@ -47,17 +50,41 @@ public class RTSUIController : MonoBehaviour {
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
+
+        if(PlayerController.RtsCamera == false)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
     }
 
     public void UnPauseButton()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+
+        if(PlayerController.RtsCamera == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenOptionsPanel()
+    {
+       optionsPanel.SetActive(true);
+    }
+
+    public void CloseOptionsPanel()
+    {
+        optionsPanel.SetActive(false);
     }
 
     public void BuildPanelOpen()

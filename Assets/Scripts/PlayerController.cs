@@ -77,18 +77,7 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    public void Continue()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
 
     void RTSMode()
     {
