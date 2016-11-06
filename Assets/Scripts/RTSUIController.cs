@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RTSUIController : MonoBehaviour {
 
@@ -74,7 +75,7 @@ public class RTSUIController : MonoBehaviour {
 
     public void QuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OpenOptionsPanel()
