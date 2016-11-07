@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: aae9041602fbd6746bd04c77888a8f33
+timeCreated: 1478515454
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Qanelas Soft DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1920b436273d0fa419f799d60b1075d9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
