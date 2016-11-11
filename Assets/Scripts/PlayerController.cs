@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour {
     {
         RTSCamera.GetComponent<Camera>().enabled = true;
         RTSCamera.GetComponent<AudioListener>().enabled = true;
+        RTSCamera.GetComponent<ISRTSCamera>().KeyboardControl(true);
         RTSCamera.GetComponent<ISRTSCamera>().enabled = true;
         FPSCamera.SetActive(false);
         RtsCamera = true;
@@ -95,6 +96,7 @@ public class PlayerController : MonoBehaviour {
     {
         RTSCamera.GetComponent<Camera>().enabled = false;
         RTSCamera.GetComponent<AudioListener>().enabled = false;
+        RTSCamera.GetComponent<ISRTSCamera>().KeyboardControl(false);
         RTSCamera.GetComponent<ISRTSCamera>().enabled = false;
         FPSCamera.SetActive(true);
         RtsCamera = false;

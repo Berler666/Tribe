@@ -1,12 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// ISRTS Camera
-/// Created by SPINACH.
-/// 
-/// © 2013 - 2016 SPINACH All rights reserved.
-/// </summary>
 
 public enum iSMouseButton{
 	Left,Right,Middle
@@ -254,6 +248,7 @@ public class ISRTSCamera : MonoBehaviour {
 
     public void Instanciate()
     {
+        
         objectPos = CalculateCurrentObjectPosition();
         scrollValue = Mathf.Clamp01(scrollValue);
         objectPos.y = scrollHigh.Evaluate(scrollValue);
