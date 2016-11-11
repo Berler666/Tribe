@@ -11,7 +11,7 @@ public class RTSUIController : MonoBehaviour {
 
     GameObject fpsCanvas;
     GameObject rtsCanvas;
-
+    GameObject RTSCamera;
 
     public static bool buildMenuOpen = false;
     
@@ -32,7 +32,7 @@ public class RTSUIController : MonoBehaviour {
         buildPanel.SetActive(false);
         optionsPanel.SetActive(false);
 
-      
+        RTSCamera = GameObject.Find("iS.RTS Camera");
 
     }
 	
@@ -99,20 +99,26 @@ public class RTSUIController : MonoBehaviour {
 
     public void BuildPanelOpen()
     {
+        RTSCamera.GetComponent<ISRTSCamera>().MouseScrollControl(false);
+        RTSCamera.GetComponent<ISRTSCamera>().enabled = false;
         BuildMenu.inMenu = true;
         buildPanel.SetActive(true);
         buildMenuOpen = true;
-        //PlayerController.RtsCamera = false;
-
         
+        
+
+
     }
 
     public void BuildPanelClose()
     {
+        RTSCamera.GetComponent<ISRTSCamera>().MouseScrollControl(true);
+        RTSCamera.GetComponent<ISRTSCamera>().enabled = true;
         buildPanel.SetActive(false);
         BuildMenu.ghostActive = false;
         buildMenuOpen = false;
-       // PlayerController.RtsCamera = true;
+        
+        
     }
 
 }
