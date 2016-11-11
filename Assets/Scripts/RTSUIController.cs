@@ -9,6 +9,9 @@ public class RTSUIController : MonoBehaviour {
     public GameObject buildPanel;
     public GameObject optionsPanel;
 
+    GameObject fpsCanvas;
+    GameObject rtsCanvas;
+
 
     public static bool buildMenuOpen = false;
     
@@ -29,9 +32,9 @@ public class RTSUIController : MonoBehaviour {
         buildPanel.SetActive(false);
         optionsPanel.SetActive(false);
 
-       
-	
-	}
+      
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,12 +53,16 @@ public class RTSUIController : MonoBehaviour {
     public void PauseButton()
     {
         pauseMenu.SetActive(true);
+        rtsCanvas = GameObject.FindGameObjectWithTag("RTSCanvas");
+        rtsCanvas.SetActive(false);
         Time.timeScale = 0;
 
         if(PlayerController.RtsCamera == false)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            fpsCanvas = GameObject.FindGameObjectWithTag("FPSCanvas");
+            fpsCanvas.SetActive(false);
         }
         
     }
@@ -63,12 +70,14 @@ public class RTSUIController : MonoBehaviour {
     public void UnPauseButton()
     {
         pauseMenu.SetActive(false);
+        rtsCanvas.SetActive(true);
         Time.timeScale = 1;
 
         if(PlayerController.RtsCamera == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            fpsCanvas.SetActive(true);
 
         }
     }
@@ -93,7 +102,7 @@ public class RTSUIController : MonoBehaviour {
         BuildMenu.inMenu = true;
         buildPanel.SetActive(true);
         buildMenuOpen = true;
-        PlayerController.RtsCamera = false;
+        //PlayerController.RtsCamera = false;
 
         
     }
@@ -103,7 +112,7 @@ public class RTSUIController : MonoBehaviour {
         buildPanel.SetActive(false);
         BuildMenu.ghostActive = false;
         buildMenuOpen = false;
-        PlayerController.RtsCamera = true;
+       // PlayerController.RtsCamera = true;
     }
 
 }
