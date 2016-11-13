@@ -8,7 +8,7 @@ public class Mouse : MonoBehaviour {
     RaycastHit hit;
 
     public static Vector3 RightClickPoint;
-    public static Vector3 RightClickFoodPoint;
+    public static Vector3 RightClickGatherPoint;
     public static ArrayList CurrentlySelectedUnits = new ArrayList(); //of gameobject
     public static ArrayList UnitsOnScreen = new ArrayList(); //of gameobject
     public static ArrayList UnitsInDrag = new ArrayList(); // of gameobject
@@ -28,7 +28,7 @@ public class Mouse : MonoBehaviour {
 
     private static float clickDragZone = 1.3f;
 
-    public static bool isFood = false;
+    public static bool resourceCollect = false;
 
     //GUI
     private float boxWidth;
@@ -99,18 +99,18 @@ public class Mouse : MonoBehaviour {
             if (!UserIsDragging)
             {
 
-                if(hit.collider.tag == "food")
+                if(hit.collider.tag == "resource")
                 {
                     if (Input.GetMouseButtonDown(1))
                     {
                         Instantiate(markerPrefab, new Vector3(hit.point.x, hit.point.y + 3, hit.point.z), Quaternion.identity);
-                        isFood = true;
-                        RightClickFoodPoint = hit.point;
+                        resourceCollect = true;
+                        RightClickGatherPoint = hit.point;
                     }
                 }
                 else
                 {
-                    isFood = false;
+                    resourceCollect = false;
                 }
 
                 if (hit.collider.name == "TerrainMain")

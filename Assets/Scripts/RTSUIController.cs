@@ -9,7 +9,7 @@ public class RTSUIController : MonoBehaviour {
     public GameObject buildPanel;
     public GameObject optionsPanel;
 
-    GameObject devoptions;
+    public GameObject devoptions;
 
     GameObject fpsCanvas;
     GameObject rtsCanvas;
@@ -33,11 +33,11 @@ public class RTSUIController : MonoBehaviour {
         pauseMenu.SetActive(false);
         buildPanel.SetActive(false);
         optionsPanel.SetActive(false);
+        devoptions.SetActive(false);
 
-        devoptions = GameObject.Find("DevOptions Panel");
         RTSCamera = GameObject.Find("iS.RTS Camera");
 
-        devoptions.SetActive(false);
+       
 
     }
 	

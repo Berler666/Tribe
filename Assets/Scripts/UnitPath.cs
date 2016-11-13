@@ -38,7 +38,7 @@ public class UnitPath : MonoBehaviour {
     {
         if(unit.Selected && unit.isWalkable)
         {
-            if(Input.GetMouseButtonDown(1) && Mouse.isFood == false)
+            if(Input.GetMouseButtonDown(1) && Mouse.resourceCollect == false)
             {
                 seeker.StartPath(transform.position, Mouse.RightClickPoint, OnPathComplete);
             }
@@ -46,9 +46,9 @@ public class UnitPath : MonoBehaviour {
 
         if(unit.Selected && unit.canCollectResourses)
         {
-            if(Input.GetMouseButtonDown(1) && Mouse.isFood == true)
+            if(Input.GetMouseButtonDown(1) && Mouse.resourceCollect == true)
             {
-                gatherPoint = Mouse.RightClickFoodPoint;
+                gatherPoint = Mouse.RightClickGatherPoint;
                 seeker.StartPath(transform.position, gatherPoint, OnPathComplete);
             }
         }

@@ -11,6 +11,8 @@ TagManager:
   - food
   - RTSCanvas
   - FPSCanvas
+  - Crosshair
+  - resource
   layers:
   - Default
   - TransparentFX
