@@ -15,9 +15,9 @@ public class Unit : MonoBehaviour {
     public bool isWalkable = true;
     public bool canCollectResourses = false;
 
-    public float resource = 0;
+    public int resource = 0;
     public int resourcesPerGather = 2;
-    public float maxResourceCarry = 10;
+    public int maxResourceCarry = 10;
     public float waitTime = 5;
     private bool isGathering;
 
@@ -77,6 +77,14 @@ public class Unit : MonoBehaviour {
             isGathering = true;
             StartCoroutine(OnGatherUpdate());
         }
+
+        if (resourceCol.tag == "stockpile")
+        {
+
+            Debug.Log("depositing resources");
+            StartCoroutine(OnDepositeUpdate());
+            
+        }
     }
 
     void OnTriggerExit(Collider resourceCol)
@@ -87,6 +95,14 @@ public class Unit : MonoBehaviour {
             Debug.Log("stop gathering resource");
             isGathering = false;
             StopCoroutine(OnGatherUpdate());
+        }
+
+        if (resourceCol.tag == "stockpile")
+        {
+
+            Debug.Log("stop deposite");
+            
+            
         }
     }
 
@@ -101,5 +117,13 @@ public class Unit : MonoBehaviour {
             treeScript.treeWood -= resourcesPerGather;
             StartCoroutine(OnGatherUpdate());
         }
+    }
+
+    IEnumerator OnDepositeUpdate()
+    {
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("deposite complete");
+        PlayerResources.wood += resource;
+        resource = 0;
     }
 }
