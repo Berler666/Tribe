@@ -901,6 +901,11 @@ Prefab:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1225997267}
+    - target: {fileID: 81000013277717100, guid: 81b0e9f559d6cab4caa3e303947c3c48,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013509417700, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 81b0e9f559d6cab4caa3e303947c3c48, type: 2}
@@ -4750,7 +4755,7 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
-  lastUniqueAreaIndex: 110
+  lastUniqueAreaIndex: 109
 --- !u!4 &729163661
 Transform:
   m_ObjectHideFlags: 0
@@ -11106,7 +11111,7 @@ GameObject:
   - 33: {fileID: 1359779826}
   - 23: {fileID: 1359779825}
   - 64: {fileID: 1359779824}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: rock2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13782,6 +13787,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1635235432}
   - 114: {fileID: 1635235431}
+  - 82: {fileID: 1635235433}
   m_Layer: 0
   m_Name: Day/NightControler
   m_TagString: Untagged
@@ -13801,7 +13807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exposure: 3
-  time: 34000
+  time: 40000
   sunTransform: {fileID: 1580382709}
   sunLight: {fileID: 1580382708}
   days: 0
@@ -13809,6 +13815,7 @@ MonoBehaviour:
   fogDay: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   fogNight: {r: 0.0018923029, g: 0.0018923029, b: 0.25735295, a: 1}
   speed: 150
+  nightClip: {fileID: 8300000, guid: 4694f1c3818fdf34a9a8ba1aa4700b1e, type: 3}
 --- !u!4 &1635235432
 Transform:
   m_ObjectHideFlags: 0
@@ -13822,6 +13829,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
+--- !u!82 &1635235433
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635235430}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &1635497466 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}

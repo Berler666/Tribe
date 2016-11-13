@@ -19,22 +19,29 @@ public class DayNightCycle : MonoBehaviour {
 
 	public int speed;
 
+    //day/night audio
+    public AudioClip nightClip;
+    AudioSource audiosource;
+
+
 
 
 	// Use this for initialization
 	void Start () {
+
+        audiosource = this.GetComponent<AudioSource>();
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 
 
 
 
 
-		ChangeTime();
+
+        ChangeTime();
 
 	
 	}
@@ -129,6 +136,8 @@ public class DayNightCycle : MonoBehaviour {
 		{
 			exposure =0.3f;
 			RenderSettings.skybox.SetFloat("_Exposure", exposure);
+            audiosource.clip = nightClip;
+            audiosource.Play();
 		}
 
 		if(time>83000)
