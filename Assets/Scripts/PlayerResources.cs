@@ -10,6 +10,8 @@ public class PlayerResources : MonoBehaviour {
     public static int stone;
     public static int gold;
 
+    
+
     void Start()
     {
         ReserchPoints = 1000;
@@ -18,4 +20,6 @@ public class PlayerResources : MonoBehaviour {
         stone = 0;
         gold = 0;
     }
+
+   
 }

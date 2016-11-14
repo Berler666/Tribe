@@ -23,11 +23,12 @@ GameObject:
   - 33: {fileID: 33000010362045112}
   - 23: {fileID: 23000011474365734}
   - 136: {fileID: 136000014264250542}
-  - 95: {fileID: 95000011448775894}
   - 114: {fileID: 114000012763370224}
-  m_Layer: 0
+  - 54: {fileID: 54000010474595138}
+  - 65: {fileID: 65000013923448900}
+  m_Layer: 2
   m_Name: TestTree
-  m_TagString: Untagged
+  m_TagString: resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013508433828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 234.1, y: 88.2, z: 783.99225}
+  m_LocalPosition: {x: 234.1, y: 86.7, z: 783.99225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 13.693141, y: 0, z: 0}
   m_Children: []
@@ -82,23 +83,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013508433828}
   m_Mesh: {fileID: 4368594, guid: 4e2dd32c733005a44b50004d673dc653, type: 2}
---- !u!95 &95000011448775894
-Animator:
-  serializedVersion: 3
+--- !u!54 &54000010474595138
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013508433828}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e6620cfaf5ddbba4da92b8e3d3ebb7b0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 64
+  m_CollisionDetection: 0
+--- !u!65 &65000013923448900
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013508433828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.407899, y: 8.616791, z: 6.748483}
+  m_Center: {x: 0.086242676, y: 4.3083954, z: -0.115600586}
 --- !u!114 &114000012763370224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,8 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6676603879afedd4db49f8d5a8b4f5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickPrefab: {fileID: 1000011612394840, guid: d213be93829f5264dae09b008e2a7473,
+  stickPrefab: {fileID: 1000013988283038, guid: b78c01aa47ac60140818373c61689ef7,
     type: 2}
+  treeWood: 25
+  speed: 4
 --- !u!136 &136000014264250542
 CapsuleCollider:
   m_ObjectHideFlags: 1
