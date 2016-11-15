@@ -44,14 +44,16 @@ public class PlayerInventory : MonoBehaviour {
         {
             if(invIsOpen == false)
             {
+                
                 playerInv.SetActive(true);
                 invIsOpen = true;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+               
                 foodTxt.text = "Food " + pFood;
                 woodTxt.text = "Wood " + pWood;
                 stoneTxt.text = "Stone " + pStone;
                 GoldTxt.text = "Gold " + pGold;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {
