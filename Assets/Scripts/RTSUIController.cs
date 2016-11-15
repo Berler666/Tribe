@@ -16,6 +16,8 @@ public class RTSUIController : MonoBehaviour {
     GameObject RTSCamera;
 
     public static bool buildMenuOpen = false;
+
+    bool pauseMenuOpen = false;
     
 
     //Resources
@@ -51,12 +53,23 @@ public class RTSUIController : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseButton();
+            if (pauseMenuOpen == false)
+            {
+                PauseButton();
+
+            }
+            else
+            {
+                UnPauseButton();
+            }
+          
         }
+        
     }
 
     public void PauseButton()
     {
+        pauseMenuOpen = true;
         pauseMenu.SetActive(true);
         rtsCanvas = GameObject.FindGameObjectWithTag("RTSCanvas");
         rtsCanvas.SetActive(false);
@@ -74,6 +87,7 @@ public class RTSUIController : MonoBehaviour {
 
     public void UnPauseButton()
     {
+        pauseMenuOpen = false;
         pauseMenu.SetActive(false);
         optionsPanel.SetActive(false);
         devoptions.SetActive(false);
