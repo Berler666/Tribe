@@ -75,7 +75,7 @@ public class PlayerInventory : MonoBehaviour {
 
         }
 
-        if (pStone == carryLimit)
+        if (pStone >= carryLimit)
         {
             canCollectStone = false;
 

@@ -13,7 +13,10 @@ TagManager:
   - FPSCanvas
   - Crosshair
   - resource
-  - stockpile
+  - WoodStockpile
+  - StoneStockpile
+  - FoodStockpile
+  - GoldStockpile
   layers:
   - Default
   - TransparentFX

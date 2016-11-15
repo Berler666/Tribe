@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class woodStockpile : MonoBehaviour {
+public class StoneStockpile : MonoBehaviour {
 
-   public GameObject stockPileUI;
+    public GameObject stockPileUI;
     bool uiActive = false;
 
     Transform player;
@@ -13,15 +13,17 @@ public class woodStockpile : MonoBehaviour {
 
     PlayerInventory playerinv;
 
-    void Start () {
+    void Start()
+    {
         stockPileUI.SetActive(false);
         stockPileUI.GetComponent<Transform>();
         playerinv = GameObject.Find("Player Controller").GetComponent<PlayerInventory>();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
 
         if (uiActive == true)
@@ -54,15 +56,16 @@ public class woodStockpile : MonoBehaviour {
         if (col.tag == "Player")
         {
             stockPileUI.SetActive(false);
-            
+
         }
     }
 
     void Deposit()
     {
-        playerinv.pWood += PlayerResources.wood;
-        text.text = "Plus " + playerinv.pWood + " Wood";
-        playerinv.pWood = 0;
+        playerinv.pStone += PlayerResources.stone;
+        text.text = "Plus " + playerinv.pStone + " Stone";
+        playerinv.pStone = 0;
+        playerinv.carryLimit = 4;
         StartCoroutine(HideText());
     }
 
