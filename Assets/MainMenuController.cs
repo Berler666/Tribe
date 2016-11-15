@@ -12,6 +12,7 @@ public class MainMenuController : MonoBehaviour {
     
     void Start()
     {
+        
         singlePlayerMenu.SetActive(false);
         multiplayerMenu.SetActive(false);
         loadGameMenu.SetActive(false);
